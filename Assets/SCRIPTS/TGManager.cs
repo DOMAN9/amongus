@@ -28,8 +28,8 @@ public class TGManager : MonoBehaviour
         storyText = "you find yourself in somehwat of a witches hu, and its warm inside";
         HPVAL += 2;
 
-        Lvl1Choices.SetActive(false);
-        Lvl2Choices.SetActive(true);
+        Lvl1Choices.SetActive(false); // level 1 buttons will disappear
+        Lvl2Choices.SetActive(true); // shows second choices
 
 
     }
