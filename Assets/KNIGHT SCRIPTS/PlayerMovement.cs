@@ -3,43 +3,84 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class playermovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    //speed
+    //Player speed
     public float moveSpeed;
 
-    //rigid body(makes it move)
+    //Rigid Body access
     public Rigidbody2D rigidBody;
-    // where the playe is moving
+
+    //Player movement
     private Vector2 movementInput;
-    //Access animator to play animation
+
+    //player animations
     public Animator anim;
 
-    //START///////////////////////////////////////////////////////////////////////////////////////
     // Start is called before the first frame update
     void Start()
     {
+        //para sa player to pre kimi lang
         rigidBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
-    //UPDATES///////////////////////////////////////////////////////////////////////////////////////
-    // Update is called once per frame
+    // PLAY/LAUNCH
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) //move up
+        {
+            anim.enabled= true;// 
+            anim.SetTrigger("moveup");
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            anim.SetTrigger("Upause");
+        }
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))//move down
+        {
+            anim.enabled = true;
+            anim.SetTrigger("movedown");
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            anim.SetTrigger("Dpause");
+        }
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))//move to the right
+        {
+            anim.enabled = true;
+            anim.SetTrigger("moveright");
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            anim.SetTrigger("Rpause");
+        }
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))//move to the right
+        {
+            anim.enabled = true;
+            anim.SetTrigger("moveleft");
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            anim.SetTrigger("Lpause");
+        }
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            anim.enabled = false;
+        }
+
     }
-    //fixed updates for calculating physics
-    private void FixUpdate()
+    //Fixed for physx kimi lang pre
+    private void FixedUpdate()
     {
-        rigidBody.velocity = movementInput * moveSpeed;//makes player move
+        //player  movement
+        rigidBody.velocity = movementInput * moveSpeed;
     }
 
-    //MOVEMENT//////////////////////////////////////////////////////////////////////////////////////
-    //input system click
+    //input keybinds
     private void OnMove(InputValue inputValue)
     {
-        //if press wasd is converted to vector 2 values
+        // When A is pressed
         movementInput = inputValue.Get<Vector2>();
     }
 }
