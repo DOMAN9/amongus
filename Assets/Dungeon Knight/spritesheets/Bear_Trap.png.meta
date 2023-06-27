@@ -1,22 +1,7 @@
 fileFormatVersion: 2
-guid: 48eb8bd7e511b1b4aa160e2a32d5978f
+guid: 57286f2975635314888074348438b6ce
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: wing_demon_0
-  - first:
-      213: 21300002
-    second: wing_demon_1
-  - first:
-      213: 21300004
-    second: wing_demon_2
-  - first:
-      213: 21300006
-    second: wing_demon_3
-  - first:
-      213: 21300008
-    second: wing_demon_4
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -45,16 +30,16 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -3
-  maxTextureSize: 1024
+  textureFormat: 1
+  maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
-    aniso: 16
+    filterMode: 1
+    aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -78,16 +63,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -96,10 +81,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,10 +93,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -120,10 +105,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,10 +117,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -146,106 +131,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wing_demon_0
+      name: Bear_Trap_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 6
-        width: 26
-        height: 20
+        x: 6
+        y: 9
+        width: 20
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 02305410000000000800000000000000
-      internalID: 21300000
+      spriteID: a124dcf219214e14c806f6feedf8e52e
+      internalID: -1269727823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wing_demon_1
+      name: Bear_Trap_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 7
-        width: 26
+        x: 38
+        y: 17
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8b6e11de7fd754ba26fd2ae9da4854
+      internalID: 1711337050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bear_Trap_2
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 9
+        width: 8
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 22305410000000000800000000000000
-      internalID: 21300002
+      spriteID: 3013fbecfc2e50e44b573f5acbffdeb9
+      internalID: -1658273680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wing_demon_2
+      name: Bear_Trap_3
       rect:
         serializedVersion: 2
-        x: 67
-        y: 8
-        width: 26
-        height: 17
+        x: 53
+        y: 18
+        width: 4
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 42305410000000000800000000000000
-      internalID: 21300004
+      spriteID: e53fdb7ccbc6a2f419122e71367ac020
+      internalID: -1698485340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wing_demon_3
+      name: Bear_Trap_4
       rect:
         serializedVersion: 2
-        x: 99
-        y: 7
-        width: 26
-        height: 19
+        x: 73
+        y: 9
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 62305410000000000800000000000000
-      internalID: 21300006
+      spriteID: 43e761a7e4343b549a46fce01025487a
+      internalID: 2133751118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wing_demon_4
+      name: Bear_Trap_5
       rect:
         serializedVersion: 2
-        x: 131
-        y: 6
-        width: 26
-        height: 20
+        x: 108
+        y: 9
+        width: 8
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 82305410000000000800000000000000
-      internalID: 21300008
+      spriteID: 30335b3c42d00c3458329b6af51c9392
+      internalID: 1700854885
       vertices: []
       indices: 
       edges: []
@@ -253,7 +259,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5eb18501ff4a13a4a81fff3881c926f0
+    spriteID: f8538fc01ff0e924fb80a1df573c8759
     internalID: 0
     vertices: []
     indices: 
@@ -261,11 +267,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wing_demon_2: 21300004
-      wing_demon_1: 21300002
-      wing_demon_0: 21300000
-      wing_demon_4: 21300008
-      wing_demon_3: 21300006
+      Bear_Trap_0: -1269727823
+      Bear_Trap_3: -1698485340
+      Bear_Trap_4: 2133751118
+      Bear_Trap_5: 1700854885
+      Bear_Trap_1: 1711337050
+      Bear_Trap_2: -1658273680
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

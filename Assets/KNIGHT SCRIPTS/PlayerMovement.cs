@@ -28,46 +28,50 @@ public class PlayerMovement : MonoBehaviour
     // PLAY/LAUNCH
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) //move up
-        {
-            anim.enabled= true;// 
-            anim.SetTrigger("moveup");
-        }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            anim.SetTrigger("Upause");
-        }
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))//move down
-        {
-            anim.enabled = true;
-            anim.SetTrigger("movedown");
-        }
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-            anim.SetTrigger("Dpause");
-        }
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))//move to the right
-        {
-            anim.enabled = true;
-            anim.SetTrigger("moveright");
-        }
-        if (Input.GetKeyUp(KeyCode.D))
-        {
-            anim.SetTrigger("Rpause");
-        }
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))//move to the right
-        {
-            anim.enabled = true;
-            anim.SetTrigger("moveleft");
-        }
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            anim.SetTrigger("Lpause");
-        }
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
-        {
-            anim.enabled = false;
-        }
+        //if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) //move up
+        //{
+        //    anim.enabled= true;// 
+        //    anim.SetTrigger("moveup");
+        //}
+        //if (Input.GetKeyUp(KeyCode.W))
+        //{
+        //    anim.SetTrigger("Upause");
+        //}
+        //if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))//move down
+        //{
+        //    anim.enabled = true;
+        //    anim.SetTrigger("movedown");
+        //}
+        //if (Input.GetKeyUp(KeyCode.S))
+        //{
+        //    anim.SetTrigger("Dpause");
+        //}
+        //if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))//move to the right
+        //{
+        //    anim.enabled = true;
+        //    anim.SetTrigger("moveright");
+        //}
+        //if (Input.GetKeyUp(KeyCode.D))
+        //{
+        //    anim.SetTrigger("Rpause");
+        //}
+        //if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))//move to the right
+        //{
+        //    anim.enabled = true;
+        //    anim.SetTrigger("moveleft");
+        //}
+        //if (Input.GetKeyUp(KeyCode.A))
+        //{
+        //    anim.SetTrigger("Lpause");
+        //}
+        //if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        //{
+        //    anim.enabled = false;
+        //} (ctrl + K + c to comment off) (ctrl + K + u to uncomment)
+
+        anim.SetFloat("Horizontal", movementInput.x);
+        anim.SetFloat("Vertical", movementInput.y);
+        anim.SetFloat("speed", movementInput.sqrMagnitude);
 
     }
     //Fixed for physx kimi lang pre
@@ -82,5 +86,17 @@ public class PlayerMovement : MonoBehaviour
     {
         // When A is pressed
         movementInput = inputValue.Get<Vector2>();
+    }
+
+    //
+    public int coinsCount;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coins"))
+        {
+            Destroy(collision.gameObject);
+            coinsCount++;
+        }
     }
 }
