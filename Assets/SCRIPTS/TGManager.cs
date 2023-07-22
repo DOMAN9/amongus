@@ -81,7 +81,7 @@ public class TGManager : MonoBehaviour
 
  //A.1 AND A.2 BITTONS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public void Cottage1() //A.1
+    public void A1_1() //A.1
     {
         
         storyText = "You ready you rwea[pon and your sanity to fight off the monsters" +
@@ -95,7 +95,7 @@ public class TGManager : MonoBehaviour
         HPVAL -= 1;
     }
 
-    public void Cottage2() 
+    public void A1_2() 
     {
         storyText = "You Plummit to death due to the height of the building";
         Lvl1Choices.SetActive(false);
@@ -128,10 +128,38 @@ public class TGManager : MonoBehaviour
         HPVAL = 0;
         STAVAL = 0;
     }
-//B.3////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //ENDINGS////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void ENDING1()
+    {
+        storyText = "YOU GOT INFECTED BY THE VIRUS";
+        Endings.SetActive(true);
+
+        HPVAL = 0;
+        STAVAL = 0;
+    }
+
+    public void ENDING2()
+    {
+        storyText = "YOU SURVIVED AND YOUR HEALTH IS AT BEST";
+        Endings.SetActive(true);
+
+        HPVAL = 0;
+        STAVAL = 0;
+    }
+
+    public void ENDING3()
+    {
+        storyText = "DEATH";
+        Endings.SetActive(true);
+
+        HPVAL = 0;
+        STAVAL = 0;
+    }
+
+
     public void ENDING4()
     {
-        storyText = "You Survuved, but will have to look for your next food source in order to survive";
+        storyText = "You Srvuved, but will have to look for your next food source in order to survive";
         Endings.SetActive(true);
 
         HPVAL = 0;
