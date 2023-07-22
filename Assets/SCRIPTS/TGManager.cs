@@ -8,8 +8,9 @@ public class TGManager : MonoBehaviour
     public TextMeshProUGUI storyTextMeshPro,hpTextMeshPro, statTextMeshPro;
     public string storyText;
     public int HPVAL, STAVAL;
-    public GameObject STRTandEXT, CHOICES, STAY, HPdisp, STATSdisp , Lvl1Choices, Lvl2Choices, Lvl3Choices, Lvl4Choices, Endings, Ending1, Ending2, Ending3, Ending4; //CALL LEVEL 1 BUTTONS
+    public GameObject STRTandEXT, HPstat, CHOICES, STAY, HPdisp, STATSdisp, Lvl1Choices, Lvl2Choices, Lvl3Choices, Lvl4Choices, Lvl5Choices;//, Endings, Ending1, Ending2, Ending3, Ending4; //CALL LEVEL 1 BUTTONS
  
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class TGManager : MonoBehaviour
 
     }
 
-//START AND EXIT BUTTONS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//START AND EXIT BUTTONS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////works
 
     public void STARTbot() //START BUTTON
     {
@@ -41,7 +42,8 @@ public class TGManager : MonoBehaviour
         Lvl2Choices.SetActive(false);
         Lvl3Choices.SetActive(false);
         Lvl4Choices.SetActive(false);
-        Endings.SetActive(false);
+        Lvl5Choices.SetActive(false);
+
         HPVAL= 5; HPdisp.SetActive(true);//HP display
         STAVAL= 3; STATSdisp.SetActive(true);//Stat display
         
@@ -51,7 +53,7 @@ public class TGManager : MonoBehaviour
         Application.Quit();
     }
 
- //A AND B BITTONS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //A AND B BITTONS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////working
 
     public void A1() //A 
     {
@@ -63,7 +65,7 @@ public class TGManager : MonoBehaviour
         Lvl2Choices.SetActive(true); // shows second choices
         Lvl3Choices.SetActive(false);
         Lvl4Choices.SetActive(false);
-        Endings.SetActive(false);
+        Lvl5Choices.SetActive(false);
 
     }
     public void B1() //B
@@ -76,10 +78,11 @@ public class TGManager : MonoBehaviour
         Lvl2Choices.SetActive(false);
         Lvl3Choices.SetActive(true);
         Lvl4Choices.SetActive(false);
-        Endings.SetActive(false);
+        Lvl5Choices.SetActive(false);
+
     }
 
- //A.1 AND A.2 BITTONS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ //A.1 AND A.2 BITTONS/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////notworking
 
     public void A1_1() //A.1
     {
@@ -87,32 +90,31 @@ public class TGManager : MonoBehaviour
         storyText = "You ready you rwea[pon and your sanity to fight off the monsters" +
             "And an attempt to make things lighter, you level your head and slam your weapon on the monsters head ina rhythmic pattern" +
             "you feel something in your stomach and in an attempt to medicate, you eye the only remaining antibiotics you have";
+        
         Lvl1Choices.SetActive(false);
         Lvl2Choices.SetActive(false);   
         Lvl3Choices.SetActive(false);
-        Lvl4Choices.SetActive(true);
+        Lvl4Choices.SetActive(false);
+        Lvl5Choices.SetActive(true);
 
         HPVAL -= 1;
     }
 
     public void A1_2() 
     {
-        storyText = "You Plummit to death due to the height of the building";
-        Lvl1Choices.SetActive(false);
-        Lvl2Choices.SetActive(false);
-        Lvl3Choices.SetActive(false);
-        Lvl4Choices.SetActive(false);
-        Endings.SetActive(true);
-        Ending3.SetActive(true);
+        storyText = "You Plummit to death due to the height of the building";///
+        CHOICES.SetActive(false);
+        ENDING3();
+
         HPVAL = 0;
         STAVAL = 0;
     }
-//B.1 and B.2//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//B.1 and B.2//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////working
     public void JumpB()
     {
         storyText = "You Plummit to death due to the height of the building";
-        Endings.SetActive(true);
-        Ending3.SetActive(true);
+        CHOICES.SetActive(false);
+        ENDING3();
 
         HPVAL = 0;
         STAVAL = 0;
@@ -124,16 +126,54 @@ public class TGManager : MonoBehaviour
         Lvl1Choices.SetActive(false);
         Lvl2Choices.SetActive(false);
         Lvl3Choices.SetActive(false);
+        Lvl4Choices.SetActive(false);
+        Lvl5Choices.SetActive(true);
+
+        HPVAL = 0;
+        STAVAL = 0;
+    }
+    public void fight()
+    {
+        storyText = "You successfulyl protected yourself from the monsters and now you are hungry. You went to try eat the canned peaches but it smelled funky. ";
+        Lvl1Choices.SetActive(false);
+        Lvl2Choices.SetActive(false);
+        Lvl3Choices.SetActive(false);
         Lvl4Choices.SetActive(true);
-        Endings.SetActive(false);
+        Lvl5Choices.SetActive(false);
+
+        HPVAL = 0;
+        STAVAL = 0;
+    }
+     public void trow()
+    {
+        ENDING4();
+
+        HPVAL = 0;
+        STAVAL = 0;
+    }
+    //Lvl5Choices/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////notsure
+    public void ignore()
+    {
+        CHOICES.SetActive(false);
+        ENDING1();
+
+        HPVAL = 0;
+        STAVAL = 0;
+    }
+
+    public void Drink()
+    {
+        CHOICES.SetActive(false);
+        ENDING2();
+
         HPVAL = 0;
         STAVAL = 0;
     }
     //ENDINGS////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void ENDING1()
     {
+        CHOICES.SetActive(false);
         storyText = "YOU GOT INFECTED BY THE VIRUS";
-        Endings.SetActive(true);
 
         HPVAL = 0;
         STAVAL = 0;
@@ -141,8 +181,8 @@ public class TGManager : MonoBehaviour
 
     public void ENDING2()
     {
+        CHOICES.SetActive(false);
         storyText = "YOU SURVIVED AND YOUR HEALTH IS AT BEST";
-        Endings.SetActive(true);
 
         HPVAL = 0;
         STAVAL = 0;
@@ -150,8 +190,8 @@ public class TGManager : MonoBehaviour
 
     public void ENDING3()
     {
+        CHOICES.SetActive(false);
         storyText = "DEATH";
-        Endings.SetActive(true);
 
         HPVAL = 0;
         STAVAL = 0;
@@ -161,7 +201,7 @@ public class TGManager : MonoBehaviour
     public void ENDING4()
     {
         storyText = "You Srvuved, but will have to look for your next food source in order to survive";
-        Endings.SetActive(true);
+        CHOICES.SetActive(false);
 
         HPVAL = 0;
         STAVAL = 0;
