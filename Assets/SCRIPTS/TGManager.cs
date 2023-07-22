@@ -59,8 +59,8 @@ public class TGManager : MonoBehaviour
         HPVAL += 2;
 
         CHOICES.SetActive(true) ;
-        Lvl1Choices.SetActive(true); ; // level 1 buttons will disappear
-        Lvl2Choices.SetActive(false); // shows second choices
+        Lvl1Choices.SetActive(false); ; // level 1 buttons will disappear
+        Lvl2Choices.SetActive(true); // shows second choices
         Lvl3Choices.SetActive(false);
         Lvl4Choices.SetActive(false);
         Endings.SetActive(false);
@@ -102,7 +102,8 @@ public class TGManager : MonoBehaviour
         Lvl2Choices.SetActive(false);
         Lvl3Choices.SetActive(false);
         Lvl4Choices.SetActive(false);
-        Endings.SetActive(false);
+        Endings.SetActive(true);
+        Ending3.SetActive(true);
         HPVAL = 0;
         STAVAL = 0;
     }
